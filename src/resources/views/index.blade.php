@@ -1,0 +1,160 @@
+@extends('layouts.app')
+
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/index.css') }}">
+@endsection
+
+
+@section('content')
+<div class="contact-form__content">
+    <div class="contact-form__heading">
+        <h2>Contact</h2>
+    </div>
+    <form class="form">
+        <div class="form__content--inner">
+        <div class="form__group">
+            <div class="form__group-title">
+                <span class="form__label--item">お名前</span>
+                <span class="form__label--required">※</span>
+            </div>
+            <div class="form__group-content">
+                <div class="form__input--text name-group">
+                    <input class="form__input--item" type="text" name="last_name" placeholder="例:山田" value="{{ old('last_name') }}"/>
+                    <input class="form__input--item" type="text" name="first_name" placeholder="例:太郎" value="{{ old('first_name') }}"/>
+                </div>
+                <div class="form__error">
+                @error('last_name')
+                    <span>{{ $message }}</span>
+                @enderror
+                @error('first_name')
+                    <span>{{ $message }}</span>
+                @enderror
+                </div>
+            </div>
+        </div>
+        <div class="form__group">
+            <div class="form__group-title">
+                <span class="form__label--item">性別</span>
+                <span class="form__label--required">※</span>
+            </div>
+        <div class="form__group-content">
+            <div class="form__input--btn">
+                <label>
+                <input class="form__input--radio" type="radio" name="gender" value="male" {{ old('gender') == 'male' ? 'checked' : '' }}/>男性
+                </label>
+                <label>
+                    <input class="form__input--radio" type="radio" name="gender" value="female" {{ old('gender') == 'female' ? 'checked' : '' }}/>女性
+                </label>
+                <label>
+                    <input class="form__input--radio" type="radio" name="gender" value="other" {{ old('gender') == 'other' ? 'checked' : '' }}/>その他
+                </label>
+            </div>
+            <div class="form__error">
+            @error('gender')
+                <span>{{ $message }}</span>
+            @enderror
+            </div>
+        </div>
+        </div>
+        <div class="form__group">
+            <div class="form__group-title">
+                <span class="form__label--item">メールアドレス</span>
+                <span class="form__label--required">※</span>
+            </div>
+            <div class="form__group-content">
+                <div class="form__input--text">
+                    <input class="form__input--item" type="email" name="email" placeholder="test@example.com" value="{{ old('email') }}"/>
+                </div>
+                <div class="form__error">
+                <!--バリデーション実装-->
+                </div>
+            </div>
+        </div>
+        <div class="form__group">
+            <div class="form__group-title">
+                <span class="form__label--item">電話番号</span>
+                <span class="form__label--required">※</span>
+            </div>
+            <div class="form__group-content form__group-content--flex">
+                <input class="form__input--item form__input--tel" type="text" name="tel1" placeholder="080" value="{{ old('tel1') }}"/>
+                <span class="form__tel-sep">-</span>
+                <input class="form__input--item form__input--tel" type="text" name="tel2" placeholder="1234" value="{{ old('tel2') }}"/>
+                <span class="form__tel-sep">-</span>
+                <input class="form__input--item form__input--tel" type="text" name="tel3" placeholder="5678" value="{{ old('tel3') }}"/>
+            </div>
+            <div class="form__error">
+                @error('tel1')
+                <span>{{ $message }}</span>
+                @enderror
+                @error('tel2')
+                <span>{{ $message }}</span>
+                @enderror
+                @error('tel3')
+                <span>{{ $message }}</span>
+                @enderror
+            </div>
+        </div>
+        <div class="form__group">
+            <div class="form__group-title">
+                <span class="form__label--item">住所</span>
+                <span class="form__label--required">※</span>
+            </div>
+            <div class="form__group-content">
+                <div class="form__input--text">
+                    <input class="form__input--item" type="text" name="address" placeholder="例:東京都渋谷区千駄ヶ谷1-2-3" value="{{ old('address') }}" />
+                </div>
+                <div class="form__error">
+                <!--バリデーション実装-->
+                </div>
+            </div>
+        </div>
+        <div class="form__group">
+            <div class="form__group-title">
+                <span class="form__label--item">建物名</span>
+            </div>
+            <div class="form__group-content">
+                <div class="form__input--text">
+                    <input class="form__input--item" type="text" name="address_building" placeholder="例:千駄ヶ谷マンション101" value="{{ old ('address_building') }}"/>
+                </div>
+                <div class="form__error">
+                <!--バリデーション実装-->
+                </div>
+            </div>
+        </div>
+        <div class="form__group">
+            <div class="form__group-title">
+                <span class="form__label--item">お問い合わせの種類</span>
+                <span class="form__label--required">※</span>
+            </div>
+            <div class="form__group-content">
+                <select class="form__select" name="category">
+                    <option value="">選択してください</option>
+                </select>
+                <div class="form__error">
+                <!--バリデーション実装-->
+                </div>
+            </div>
+        </div>
+        <div class="form__group">
+            <div class="form__group-title">
+                <span class="form__label--item">お問い合わせ内容</span>
+                <span class="form__label--required">※</span>
+            </div>
+            <div class="form__group-content">
+                <div class="form__input--text">
+                    <textarea class="form__input--item" name="content" placeholder="お問い合わせの内容をご記載ください">{{ old('content') }}
+                    </textarea>
+                </div>
+                <div class="form__error">
+                <!--バリデーション実装-->
+                </div>
+            </div>
+        </div>
+        <div class="form__button">
+            <button class="form__button-submit" type="submit">確認画面</button>
+        </div>
+    </div>
+    </form>
+</div>
+
+@endsection

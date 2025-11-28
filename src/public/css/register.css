@@ -1,0 +1,96 @@
+.header__right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: 1px solid #E4DBCD;
+    background: #ddd;
+    width: 7%;
+}
+
+.header__btn {
+    text-decoration: none;
+    color:#DED3C7;
+    font-size: 16px;
+}
+
+.form__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    background: #DED3C7;
+    max-width:1230px;
+}
+
+.form__header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.form__header h2 {
+    color: #927472;
+    font-weight: lighter;
+    font-size: 16px;
+}
+
+.form {
+    width:70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form__content--inner {
+    background: #fff;
+    padding: 30px;
+    border-radius: 3px;
+}
+
+.form__group {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form__group-title, .form__group-content {
+    width: 70%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.form__group-title, .form__label {
+    margin-bottom: 6px;
+    text-align: left;
+    display: block;
+}
+
+.form__label {
+    color:#927472;
+}
+
+.form__input--item {
+    padding: 10px;
+    border:none;
+    border-radius: 3px;
+    background: #E3E8EC;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: block;
+}
+
+.form__input--item::placeholder {
+    color:#927472;
+    font-size: 8px;
+}
+
+.form__button {
+    margin-top: 30px;
+}
+
+.form__button-submit {
+    padding: 5px 0;
+    width: 20%;
+    border: none;
+    background:#635449;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+}

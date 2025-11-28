@@ -14,4 +14,19 @@ use App\Http\Controllers\ContactController;
 |
 */
 
+// 管理画面（ログイン必須）
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [ContactController::class, 'dashboard']);
+});
+
+// ログイン・新規登録画面（ゲスト用）
+Route::get('/register',function() {
+    return view('auth.register');})->name('register');
+Route::get('/login',function() {
+    return view('auth.login');})->name('login');
+
+// ゲスト用
 Route::get('/',[ContactController::class,'index']);
+
+
+Route::post('/confirm',[ContactController::class,'confirm']);
