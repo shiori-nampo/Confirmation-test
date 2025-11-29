@@ -13,7 +13,7 @@ class Category extends Model
         'content',
     ];
 
-    public function contact() {
+    public function contacts() {
         return $this->hasMany(Contact::class);
     }
 }

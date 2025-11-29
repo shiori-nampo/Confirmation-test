@@ -16,7 +16,8 @@ use App\Http\Controllers\ContactController;
 
 // 管理画面（ログイン必須）
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', [ContactController::class, 'dashboard']);
+    Route::get('/admin', [CategoryController::class, 'admin'])->name('admin');
+    Route::get('/search',[CategoryController::class,'search'])->name('search');
 });
 
 // ログイン・新規登録画面（ゲスト用）
@@ -26,7 +27,12 @@ Route::get('/login',function() {
     return view('auth.login');})->name('login');
 
 // ゲスト用
-Route::get('/',[ContactController::class,'index']);
+Route::get('/',[ContactController::class,'index'])->name('index');
 
+Route::post('/back',[ContactController::class,'back']);
 
-Route::post('/confirm',[ContactController::class,'confirm']);
+Route::post('/confirm',[ContactController::class,'confirm'])->name('confirm');
+
+Route::post('/contacts/store',[ContactController::class,'store'])->name('contacts.store');
+
+Route::get('/thanks',[ContactController::class,'thanks'])->name('thanks');

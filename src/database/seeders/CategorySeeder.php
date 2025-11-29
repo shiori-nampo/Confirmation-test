@@ -1,0 +1,32 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use App\Models\Category;
+use App\Models\Contact;
+
+class CategorySeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $categories = [
+            '商品のお届けについて',
+            '商品の交換について',
+            '商品トラブルについて',
+            'ショップへのお問い合わせ',
+            'その他',
+        ];
+
+        foreach ($categories as $category) {
+            Category::firstOrCreate(['content' => $category]);
+        }
+
+    }
+}

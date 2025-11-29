@@ -70,7 +70,7 @@
     cursor: pointer;
 }
 
-.form__item-kinds {
+.form__item-content {
     flex-shrink: 0;
     width: 200px;
     padding: 10px 15px;

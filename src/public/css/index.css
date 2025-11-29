@@ -112,3 +112,8 @@
     margin: 0 4px;
 }
 
+.form__select {
+    border: none;
+    background: #E3E8EC;
+    color: #927472;
+}
