@@ -138,13 +138,17 @@
     margin: 0;
     text-align: left;
     width: 100%;
+    border: 1px solid #ddd;
 }
 
 .admin-table__thead {
     background:#635449;
     color: #fff;
     width: 100%;
-    
+}
+
+.admin-table__row {
+    border-bottom: 1px solid #ddd;
 }
 
 .admin-table__header,
@@ -152,4 +156,114 @@
     text-align: left;
     padding: 10px 20px;
     box-sizing: border-box;
+}
+
+.admin__content-paginate {
+    display: flex;
+    justify-content: flex-end;
+    gap: 4px;
+}
+
+.admin__content-paginate li a,
+.admin__content-paginate li span {
+    display: block;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    border-radius: 4px;
+    min-width: 30px;
+}
+
+.logout-form {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: 1px solid #E4DBCD;
+    background: #ddd;
+    width: 7%;
+}
+
+.logout__btn {
+    text-decoration: none;
+    color:#DED3C7;
+    font-size: 16px;
+    border:none;
+    cursor: pointer;
+}
+
+[popover]:not(:popover-open) {
+    display: none;
+}
+
+
+[popover] {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    background: #fff;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    text-align: center;
+    min-width: 300px;
+    text-align: left;
+    box-shadow: 5px 5px 0.5px #EDE9E9;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 1001;
+}
+
+[popover]::backdrop {
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.delete-button {
+    border: none;
+    cursor: pointer;
+    background:#B1453F;
+    padding: 5px 15px;
+    color: #fff;
+    margin-left:230px;
+}
+
+.detail__button-submit {
+    border: 1px solid #DAD0C6;
+    padding: 0.5rem 1rem;
+    color: #DAD0C6;
+    background: #F6F5F7;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.close-button {
+    background: none;
+    border-radius:50%;
+    border: 1px solid #927E6C;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    cursor:pointer;
+    color: #927E6C;
+    z-index: 2000;
+}
+
+.detail-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.detail-table__header {
+    padding: 0.6rem;
+    text-align: left;
+    font-weight: bold;
+    width: 30%;
+}
+
+.detail-table__item {
+    padding: 0.6rem;
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Contact;
+use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {   //お問い合わせ入力画面
@@ -14,7 +15,7 @@ class ContactController extends Controller
         return view('index',compact('categories'));
     }
     // 確認画面
-    public function confirm(Request $request)
+    public function confirm(ContactRequest $request)
     {
         $tel = $request->tel1 . '-' . $request->tel2 . '-' . $request->tel3;
 
@@ -25,7 +26,7 @@ class ContactController extends Controller
         return view('confirm',compact('contact'));
     }
     // 保存
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
         $tel = $request->tel1 . '-' . $request->tel2 . '-' . $request->tel3;
 
@@ -48,7 +49,7 @@ class ContactController extends Controller
 
         $contacts = $query->paginate(7);
 
-        return view('admin',compact('contacts','categories'));
+        return view('/admin/admin',compact('contacts','categories'));
 
     }
 
@@ -65,6 +66,14 @@ class ContactController extends Controller
 
         $categories = Category::all();
 
-        return view('admin',compact('contacts','categories'));
+        return view('/admin/admin',compact('contacts','categories'));
+    }
+
+    //お問い合わせ削除
+    public function destroy(Request $request)
+    {
+        Contact::findOrFail($request->id)->delete();
+
+        return redirect('/admin/admin')->with('message','お問い合わせを削除しました');
     }
 }

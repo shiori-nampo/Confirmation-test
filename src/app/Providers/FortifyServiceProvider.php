@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
+use App\Http\Requests\RegisterRequest;
+use App\Http\Requests\LoginRequest;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
+
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -45,6 +51,26 @@ class FortifyServiceProvider extends ServiceProvider
 
         return Limit::perMinute(10)->by($email . $request->ip());
     });
+
+
+    Fortify::authenticateUsing(function ($request) {
+
+        $formRequest = app(LoginRequest::class);
+        $formRequest->merge($request->all());
+        $formRequest->validateResolved();
+
+        $validated = $formRequest->validated();
+
+    $user = User::where('email', $validated['email'])->first();
+
+    if (! $user || ! Hash::check($validated['password'], $user->password)) {
+        throw ValidationException::withMessages([
+            'email' => ['ログイン情報が登録されていません。']
+        ]);
     }
 
+        return $user;
+    });
+
+}
 }

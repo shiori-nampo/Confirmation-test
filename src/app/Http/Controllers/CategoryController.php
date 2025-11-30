@@ -11,6 +11,6 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
 
-        return view('admin',compact('categories'));
+        return view('admin/admin',compact('categories'));
     }
 }

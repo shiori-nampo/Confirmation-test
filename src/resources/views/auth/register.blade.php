@@ -29,7 +29,9 @@
                     <input class="form__input--item" type="text" name="name" placeholder="例:山田 太郎" value="{{ old('name') }}"/>
                 </div>
                 <div class="form__error">
-                    <!--バリデーションを後で-->
+                    @error('name')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
                 </div>
             </div>
         </div>
@@ -42,7 +44,9 @@
                     <input class="form__input--item" type="text" name="email" placeholder="例:test@example.com" value="{{ old('email') }}"/>
                 </div>
                 <div class="form__error">
-                    <!--バリデーションを後で-->
+                @error('email')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
                 </div>
             </div>
         </div>
@@ -55,7 +59,9 @@
                     <input class="form__input--item" type="password" name="password" placeholder="例:coachtech1106"/>
                 </div>
                 <div class="form__error">
-                    <!--バリデーションを後で-->
+                @error('password')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
                 </div>
             </div>
         </div>

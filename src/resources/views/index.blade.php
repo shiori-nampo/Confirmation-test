@@ -25,10 +25,10 @@
                 </div>
                 <div class="form__error">
                 @error('last_name')
-                    <span>{{ $message }}</span>
+                    <p class="error-message">{{ $message }}</p>
                 @enderror
                 @error('first_name')
-                    <span>{{ $message }}</span>
+                    <p class="error-message">{{ $message }}</p>
                 @enderror
                 </div>
             </div>
@@ -52,7 +52,7 @@
             </div>
             <div class="form__error">
             @error('gender')
-                <span>{{ $message }}</span>
+                <p class="error-message">{{ $message }}</p>
             @enderror
             </div>
         </div>
@@ -67,7 +67,9 @@
                     <input class="form__input--item" type="email" name="email" placeholder="test@example.com" value="{{ old('email') }}"/>
                 </div>
                 <div class="form__error">
-                <!--バリデーション実装-->
+                @error('email')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
                 </div>
             </div>
         </div>
@@ -83,18 +85,13 @@
                 <span class="form__tel-sep">-</span>
                 <input class="form__input--item form__input--tel" type="text" name="tel3" placeholder="5678" value="{{ old('tel3') }}"/>
             </div>
+            </div>
             <div class="form__error">
-                @error('tel1')
-                <span>{{ $message }}</span>
-                @enderror
-                @error('tel2')
-                <span>{{ $message }}</span>
-                @enderror
-                @error('tel3')
-                <span>{{ $message }}</span>
+                @error('tel')
+                <p class="error-message error-message__tel">{{ $message }}</p>
                 @enderror
             </div>
-        </div>
+
         <div class="form__group">
             <div class="form__group-title">
                 <span class="form__label--item">住所</span>
@@ -105,7 +102,9 @@
                     <input class="form__input--item" type="text" name="address" placeholder="例:東京都渋谷区千駄ヶ谷1-2-3" value="{{ old('address') }}" />
                 </div>
                 <div class="form__error">
-                <!--バリデーション実装-->
+                @error('address')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
                 </div>
             </div>
         </div>
@@ -118,7 +117,9 @@
                     <input class="form__input--item" type="text" name="building" placeholder="例:千駄ヶ谷マンション101" value="{{ old ('building') }}"/>
                 </div>
                 <div class="form__error">
-                <!--バリデーション実装-->
+                @error('building')
+                {{ $message }}
+                @enderror
                 </div>
             </div>
         </div>
@@ -135,7 +136,9 @@
                     @endforeach
                 </select>
                 <div class="form__error">
-                <!--バリデーション実装-->
+                @error('content')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
                 </div>
             </div>
         </div>
@@ -150,7 +153,9 @@
                     </textarea>
                 </div>
                 <div class="form__error">
-                <!--バリデーション実装-->
+                @error('detail')
+                <p class="error-message">{{ $message }}</p>
+                @enderror
                 </div>
             </div>
         </div>

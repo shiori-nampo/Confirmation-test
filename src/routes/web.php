@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +17,12 @@ use App\Http\Controllers\ContactController;
 
 // 管理画面（ログイン必須）
 Route::middleware('auth')->group(function () {
-    Route::get('/admin', [CategoryController::class, 'admin'])->name('admin');
-    Route::get('/search',[CategoryController::class,'search'])->name('search');
+    Route::get('/admin/admin', [ContactController::class, 'admin'])->name('admin');
+    Route::get('/admin/search',[ContactController::class,'search'])->name('admin.search');
+    Route::delete('/admin/delete/{id}',[ContactController::class,'destroy'])->name('admin.destroy');
 });
 
-// ログイン・新規登録画面（ゲスト用）
+// ログイン・新規登録画面
 Route::get('/register',function() {
     return view('auth.register');})->name('register');
 Route::get('/login',function() {

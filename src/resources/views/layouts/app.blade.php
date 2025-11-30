@@ -9,21 +9,16 @@
     @yield('css')
 </head>
 <body>
+
     <header class="header">
         <div class="header__inner">
             <a class="header__logo" href="/">
                 FashionablyLate
             </a>
             @yield('header-right')
-            @if(Auth::check())
-            <form class="logout-form" action="/logout" method="post">
-            @csrf
-            <button class="logout__btn" href="/login">logout</button>
-            </form>
-            @endif
         </div>
     </header>
-    <main>
+<main>
     @yield('content')
 </main>
 </body>

@@ -46,11 +46,10 @@
 
 .form__group-content {
     width: 70%;
-    display: flex;
     gap: 10px;
-    justify-content: flex-start;
     color: #927472;
 }
+
 .form__input--item {
     padding: 10px;
     border:none;
@@ -106,6 +105,7 @@
 .form__input--tel {
     width: 100%;
     text-align: center;
+    gap: 10px;
 }
 
 .form__tel-sep {
@@ -116,4 +116,19 @@
     border: none;
     background: #E3E8EC;
     color: #927472;
+}
+
+.form__error {
+    margin-top: 4px;
+}
+
+.error-message {
+    color:red;
+    font-size: 14px;
+    margin: 2px 0;
+    text-align: left;
+}
+
+.error-message__tel {
+    text-align: center;
 }

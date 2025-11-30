@@ -94,3 +94,14 @@
     text-align: center;
     display: inline-block;
 }
+
+.form__error {
+    margin: 10px;
+}
+
+.error-message {
+    text-align: left;
+    font-size: 14px;
+    margin: 2px 0;
+    color:red;
+}
