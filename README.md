@@ -3,7 +3,7 @@
 ## 環境構築
 
 Dockerビルド
-- git clone -b main  https://github.com/shiori-nampo/Confirmation-test/tree/main
+- git clone -b main  https://github.com/shiori-nampo/Confirmation-test.git
 - docker compose up -d --build
 
 Laravel環境開発
@@ -17,7 +17,7 @@ Laravel環境開発
 
 - お問い合わせ画面:http://localhost:8000/
 - ユーザー登録画面:http://localhost:8000/register
-- phpmyadmin:http://localhost:8080
+- phpMyadmin:http://localhost:8080
 
 使用技術（実行環境）
 - nginx 1.21.1
