@@ -12,7 +12,8 @@
 .contact-form__heading h2 {
     color:#927472;
     font-weight:lighter;
-    font-size: 16px;
+    font-size: 30px;
+    font-family: 'Lora',serif;
 }
 
 .form {
@@ -54,7 +55,7 @@
     padding: 10px;
     border:none;
     border-radius: 3px;
-    background: #E3E8EC;
+    background: #F7FAFB;
     width: 100%;
     box-sizing: border-box;
     margin: 0 auto;
@@ -65,6 +66,7 @@
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    margin-left: auto;
 }
 
 .name-group input {
@@ -112,10 +114,36 @@
     margin: 0 4px;
 }
 
+.form__group-content-category {
+    position: relative;
+    overflow: hidden;
+    margin-left: auto;
+}
+
 .form__select {
     border: none;
-    background: #E3E8EC;
-    color: #927472;
+    background: #F7FAFB;
+    color: #AB9B9D;
+    padding: 10px 30px 10px 10px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    width: 70%;
+    margin-right:350px;
+}
+
+.form__group-content-category::after {
+    content: "▼";
+    position: absolute;
+    right: 180px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color:#ddd;
+    font-size: 12px;
 }
 
 .form__error {
@@ -131,4 +159,11 @@
 
 .error-message__tel {
     text-align: center;
+}
+
+.form__button-submit {
+    background: #635449;
+    padding: 8px 35px;
+    border: none;
+    color: #fff;
 }

@@ -12,7 +12,8 @@
 .confirm__heading h2 {
     color:#927472;
     font-weight:lighter;
-    font-size: 16px;
+    font-size: 30px;
+    font-family: 'Lora',serif;
 }
 
 .form {
@@ -31,16 +32,20 @@
 
 .confirm-table__header {
     padding: 15px;
-    width: 20%;
-    border-bottom: apx solid #ddd;
+    width: 30%;
+    border-bottom: 1px solid #ddd;
     background: #B09686;
     color: #fff;
+
 }
 
 .confirm-table__text {
-    padding: 15px;
-    border-bottom: apx solid #ddd;
+    padding: 15px 10px 15px 30px;
+    text-align: left;
+    border: 1px solid #ddd;
+    color: #ADA09A;
 }
+
 
 .confirm-table__text input {
     width: 100%;
@@ -54,7 +59,8 @@
 
 .form__btn-send {
     margin-top: 30px;
-    display: inline-block;
+    display: flex;
+    margin: 40px auto;
 }
 
 .form__submit-send {
@@ -64,15 +70,19 @@
     background:#635449;
     color: #fff;
     cursor: pointer;
+    margin-left: auto;
 }
 
-.correction__btn {
-    display: inline-block;
-    margin-top: 30px;
-    margin-left: 30px;
-}
-
-.correction__link {
+.correction-form__link {
+    text-align: center;
     color:#B09686;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-right: auto;
+    margin-left: 30px;
+    border:none;
+    background: transparent;
+    text-decoration: underline;
 }
+
 

@@ -5,7 +5,7 @@
 @endsection
 
 @section('header-right')
-<div class="header-right">
+<div class="header__right">
     <a class="header__btn" href="/register">register</a>
 </div>
 @endsection

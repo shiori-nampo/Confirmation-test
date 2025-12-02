@@ -26,7 +26,6 @@
     text-decoration: none;
     border: none;
     color: #fff;
-    
 }
 
 .thanks-bg {
@@ -40,4 +39,6 @@
     white-space:nowrap;
     pointer-events: none;
     color: #F3EEE8;
+    font-family: 'Lora',serif;
 }
+

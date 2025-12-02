@@ -20,6 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/admin', [ContactController::class, 'admin'])->name('admin');
     Route::get('/admin/search',[ContactController::class,'search'])->name('admin.search');
     Route::delete('/admin/delete/{id}',[ContactController::class,'destroy'])->name('admin.destroy');
+    Route::get('/admin/export',[ContactController::class,'export'])->name('admin.export');
 });
 
 // ログイン・新規登録画面
@@ -31,10 +32,10 @@ Route::get('/login',function() {
 // ゲスト用
 Route::get('/',[ContactController::class,'index'])->name('index');
 
-Route::post('/back',[ContactController::class,'back']);
-
 Route::post('/confirm',[ContactController::class,'confirm'])->name('confirm');
 
-Route::post('/contacts/store',[ContactController::class,'store'])->name('contacts.store');
+Route::post('/store',[ContactController::class,'store'])->name('store');
 
-Route::get('/thanks',[ContactController::class,'thanks'])->name('thanks');
+Route::get('/thanks',function () {
+    return view('thanks');
+})->name('thanks');

@@ -18,6 +18,8 @@
     padding: 30px 15px;
     background: #DED3C7;
     max-width:1230px;
+    height: 100vh;
+
 }
 
 .login-form__header {
@@ -28,24 +30,30 @@
 .login-form__header h2 {
     color: #927472;
     font-weight: lighter;
-    font-size: 16px
+    font-size: 30px;
+    font-family: 'Lora',serif;
 }
 
 .form {
-    width:70%;
+    width:60%;
+    height: 70%;
     margin: 0 auto;
     text-align: center;
 }
 
 .form__content--inner {
     background: #fff;
-    padding: 30px;
+    padding: 150px 30px 30px 30px;
     border-radius: 3px;
+    height: 100%;
+
+
 }
 
 .form__group {
     text-align: center;
     margin-bottom: 20px;
+    height:20%;
 }
 
 .form__group-title, .form__group-content {
@@ -62,6 +70,7 @@
 
 .form__label {
     color:#927472;
+    font-size: 20px;
 }
 
 .form__input--item {

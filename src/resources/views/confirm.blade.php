@@ -10,7 +10,7 @@
     <div class="confirm__heading">
         <h2>Confirm</h2>
     </div>
-    <form class="form" action="/thanks" method="post">
+<form class="form" action="{{ route('store') }}" method="post">
         @csrf
         <div class="confirm-table">
             <table class="confirm-table__inner">
@@ -18,14 +18,15 @@
                     <th class="confirm-table__header">お名前
                     </th>
                     <td class="confirm-table__text">
-                        {{ $contact->last_name }} {{ $contact->first_name }}
-                        <input class="confirm__input" type="hidden" name="name" value="{{ $contact->last_name }} {{ $contact->first_name }}" />
+                        {{ $contact['last_name'] }} {{ $contact['first_name'] }}
+                        <input class="confirm__input" type="hidden" name="last_name" value="{{ $contact['last_name'] }}"/>
+                        <input class="confirm__input" type="hidden" name="first_name" value="{{ $contact['first_name'] }}"/>
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">性別</th>
                     <td class="confirm-table__text">
-                        {{ $contact['gender'] }}
+                        {{ $contact['gender'] == 1 ? '男性' : '女性' }}
                         <input class="confirm__input" type="hidden" name="gender" value="{{ $contact['gender'] }}"/>
                     </td>
                 </tr>
@@ -40,7 +41,7 @@
                     <th class="confirm-table__header">電話番号</th>
                     <td class="confirm-table__text">
                         {{ $contact['tel'] }}
-                        <input class="confirm__input" type="hidden" name="tel" value="{{ $contact['tel'] }}"/>
+                        <input type="hidden" name="tel" value="{{ $contact['tel'] }}">
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -60,7 +61,7 @@
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">お問い合わせの種類</th>
                     <td class="confirm-table__text">
-                        {{ $contact['content'] }}
+                        {{ $categories->firstWhere('id',$contact['category_id'])->content ?? '未選択' }}
                         <input class="confirm__input" type="hidden" name="category_id" value="{{ $contact['category_id'] }}"/>
                     </td>
                 </tr>
@@ -75,12 +76,9 @@
         </div>
         <div class="form__btn-send">
             <button class="form__submit-send" type="submit">送信</button>
+            <button class="correction-form__link" type="button" onclick="history.back()">修正</button>
         </div>
-        <form class="correction-form__btn" action="/back" method="post">
-            @csrf
-            <button class="correction-form__link" href="/">修正</button>
-        </form>
-    </form>
+</form>
 </div>
 
 @endsection('content')

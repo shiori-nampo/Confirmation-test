@@ -10,7 +10,7 @@
     <div class="contact-form__heading">
         <h2>Contact</h2>
     </div>
-    <form class="form" action="/confirm" method="post">
+    <form class="form" action="{{ route('confirm') }}" method="post">
         @csrf
         <div class="form__content--inner">
         <div class="form__group">
@@ -128,15 +128,15 @@
                 <span class="form__label--item">お問い合わせの種類</span>
                 <span class="form__label--required">※</span>
             </div>
-            <div class="form__group-content">
+            <div class="form__group-content-category">
                 <select class="form__select" name="category_id">
                     <option value="">選択してください</option>
                     @foreach($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->content }}</option>
+                    <option value="{{ $category->id }}" {{ old('category_id') ==  '$category->id' ? 'selected' : '' }}>{{ $category->content }}</option>
                     @endforeach
                 </select>
                 <div class="form__error">
-                @error('content')
+                @error('category_id')
                 <p class="error-message">{{ $message }}</p>
                 @enderror
                 </div>

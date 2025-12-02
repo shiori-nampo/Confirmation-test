@@ -1,0 +1,38 @@
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+    margin-left: auto;
+}
+
+.pagination li {
+    list-style: none;
+}
+
+.pagination a,
+.pagination span {
+    display: block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border: 1px solid #635449;
+    text-decoration: none;
+    font-size: 14px;
+    color: #635449;
+    background: #fff;
+    margin-top: auto;
+}
+
+.pagination .active span {
+    background: #635449;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+/* ページ番号同士をくっつける */
+.pagination li + li {
+    margin-left: -1px;
+}
